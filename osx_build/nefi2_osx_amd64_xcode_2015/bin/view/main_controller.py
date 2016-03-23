@@ -1353,7 +1353,7 @@ class LeftCustomWidget(QWidget):
 
         self.setGeometry(0, 0, 330, self.image_label.height() + self.image.height())
 
-        self.trigger.connect(lambda: self.slot(self.MidCustomWidget.getCurrentImage(), self.cat))
+        self.trigger.connect(lambda: self.slot(self.MidCustomWidget.get_current_image(), self.cat))
 
     def mousePressEvent(self, QMouseEvent):
         """
@@ -1375,7 +1375,7 @@ class LeftCustomWidget(QWidget):
             except (ValueError):
                 self.mid_panel.setTitle(self.image_name + " - Already Removed From Pipeline")
 
-            self.MidCustomWidget.setCurrentImage(self.pixmap)
+            self.MidCustomWidget.set_current_image(self.pixmap)
 
             # Connect the trigger signal to a slot.
             # Emit the signal.
